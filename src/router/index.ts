@@ -59,33 +59,6 @@ const routes: Array<RouteRecordRaw> = [
               pageTitle: "Favoritos",
             },
           },
-          {
-            path: "documents",
-            name: "profile-documents",
-            component: () =>
-              import("@/views/crafted/pages/profile/Documents.vue"),
-            meta: {
-              pageTitle: "Documents",
-            },
-          },
-          {
-            path: "connections",
-            name: "profile-connections",
-            component: () =>
-              import("@/views/crafted/pages/profile/Connections.vue"),
-            meta: {
-              pageTitle: "Connections",
-            },
-          },
-          {
-            path: "activity",
-            name: "profile-activity",
-            component: () =>
-              import("@/views/crafted/pages/profile/Activity.vue"),
-            meta: {
-              pageTitle: "Activity",
-            },
-          },
         ],
       },
 

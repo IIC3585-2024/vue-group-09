@@ -18,11 +18,7 @@
         }"
       >
         <!-- begin:: Aside Left -->
-        <KTAside
-          v-if="asideEnabled"
-          :lightLogo="themeLightLogo"
-          :darkLogo="themeDarkLogo"
-        />
+
         <!-- end:: Aside Left -->
         <!-- begin:: Content Body -->
         <div class="content flex-row-fluid">
@@ -37,7 +33,6 @@
   <!-- end:: Body -->
   <KTScrollTop />
   <KTMessengerDrawer />
-  <KTActivityDrawer />
   <KTCreateApp />
   <KTInviteFriendsModal />
 
@@ -54,18 +49,13 @@ import {
   watch,
 } from "vue";
 import { RouterView, useRoute } from "vue-router";
-import KTAside from "@/layouts/default-layout/components/aside/Aside.vue";
 import KTHeader from "@/layouts/default-layout/components/header/Header.vue";
 import KTFooter from "@/layouts/default-layout/components/footer/Footer.vue";
 import LayoutService from "@/core/services/LayoutService";
 import KTToolbar from "@/layouts/default-layout/components/toolbar/Toolbar.vue";
-import KTScrollTop from "@/layouts/default-layout/components/extras/ScrollTop.vue";
-import KTActivityDrawer from "@/layouts/default-layout/components/drawers/ActivityDrawer.vue";
 import KTCreateApp from "@/components/modals/wizards/CreateAppModal.vue";
 import KTInviteFriendsModal from "@/components/modals/general/InviteFriendsModal.vue";
-import KTToolbarButtons from "@/layouts/default-layout/components/extras/ToolbarButtons.vue";
-import KTHelpDrawer from "@/layouts/default-layout/components/extras/HelpDrawer.vue";
-import KTMessengerDrawer from "@/layouts/default-layout/components/extras/MessengerDrawer.vue";
+
 import { reinitializeComponents } from "@/core/plugins/keenthemes";
 import {
   asideEnabled,
@@ -82,17 +72,11 @@ export default defineComponent({
   name: "default-layout",
   components: {
     RouterView,
-    KTAside,
     KTHeader,
     KTFooter,
     KTToolbar,
-    KTScrollTop,
     KTCreateApp,
     KTInviteFriendsModal,
-    KTActivityDrawer,
-    KTToolbarButtons,
-    KTHelpDrawer,
-    KTMessengerDrawer,
   },
   setup() {
     const route = useRoute();
