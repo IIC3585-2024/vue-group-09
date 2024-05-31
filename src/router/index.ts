@@ -11,9 +11,6 @@ const routes: Array<RouteRecordRaw> = [
     path: "/",
     redirect: "/dashboard",
     component: () => import("@/layouts/default-layout/DefaultLayout.vue"),
-    meta: {
-      middleware: "auth",
-    },
     children: [
       {
         path: "/dashboard",
