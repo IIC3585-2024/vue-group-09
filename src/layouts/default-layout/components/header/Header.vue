@@ -34,7 +34,7 @@
         <router-link to="/dashboard">
           <img
             alt="Logo"
-            :src="getAssetPath('media/logos/demo2.png')"
+            :src="getAssetPath('media/logos/santiago-logo.png')"
             class="logo-default h-25px"
           />
           <img

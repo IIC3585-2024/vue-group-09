@@ -1,9 +1,8 @@
 import {
   createRouter,
   createWebHistory,
-  type RouteRecordRaw,
+  type RouteRecordRaw
 } from "vue-router";
-import { useAuthStore } from "@/stores/auth";
 import { useConfigStore } from "@/stores/config";
 
 const routes: Array<RouteRecordRaw> = [
@@ -18,72 +17,30 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/Dashboard.vue"),
         meta: {
           pageTitle: "Dashboard",
-          breadcrumbs: ["Dashboards"],
-        },
+          breadcrumbs: ["Dashboards"]
+        }
       },
       {
         path: "/crafted/pages/profile",
         name: "profile",
         component: () => import("@/components/page-layouts/Profile.vue"),
         meta: {
-          breadcrumbs: ["Pages", "Profile"],
+          breadcrumbs: ["Pages", "Profile"]
         },
         children: [
-          {
-            path: "overview",
-            name: "profile-overview",
-            component: () =>
-              import("@/views/crafted/pages/profile/Overview.vue"),
-            meta: {
-              pageTitle: "Mi cuenta",
-            },
-          },
-          {
-            path: "bookings",
-            name: "profile-bookings",
-            component: () =>
-              import("@/views/crafted/pages/profile/Bookings.vue"),
-            meta: {
-              pageTitle: "Mis reservas",
-            },
-          },
           {
             path: "favorites",
             name: "profile-favorites",
             component: () =>
               import("@/views/crafted/pages/profile/Favorites.vue"),
             meta: {
-              pageTitle: "Favoritos",
-            },
-          },
-        ],
-      },
-
-    ],
-  },
-  {
-    path: "/",
-    component: () => import("@/layouts/AuthLayout.vue"),
-    children: [
-      {
-        path: "/sign-in",
-        name: "sign-in",
-        component: () =>
-          import("@/views/crafted/authentication/basic-flow/SignIn.vue"),
-        meta: {
-          pageTitle: "Sign In",
-        },
-      },
-      {
-        path: "/sign-up",
-        name: "sign-up",
-        component: () =>
-          import("@/views/crafted/authentication/basic-flow/SignUp.vue"),
-        meta: {
-          pageTitle: "Sign Up",
-        },
+              pageTitle: "Favoritos"
+            }
+          }
+        ]
       }
-    ],
+
+    ]
   },
   {
     path: "/",
@@ -95,23 +52,23 @@ const routes: Array<RouteRecordRaw> = [
         name: "404",
         component: () => import("@/views/crafted/authentication/Error404.vue"),
         meta: {
-          pageTitle: "Error 404",
-        },
+          pageTitle: "Error 404"
+        }
       },
       {
         path: "/500",
         name: "500",
         component: () => import("@/views/crafted/authentication/Error500.vue"),
         meta: {
-          pageTitle: "Error 500",
-        },
-      },
-    ],
+          pageTitle: "Error 500"
+        }
+      }
+    ]
   },
   {
     path: "/:pathMatch(.*)*",
-    redirect: "/404",
-  },
+    redirect: "/404"
+  }
 ];
 
 const router = createRouter({
@@ -123,20 +80,19 @@ const router = createRouter({
       return {
         el: to.hash,
         top: 80,
-        behavior: "smooth",
+        behavior: "smooth"
       };
     } else {
       return {
         top: 0,
         left: 0,
-        behavior: "smooth",
+        behavior: "smooth"
       };
     }
-  },
+  }
 });
 
 router.beforeEach((to, from, next) => {
-  const authStore = useAuthStore();
   const configStore = useConfigStore();
 
   // current page view title
@@ -145,19 +101,7 @@ router.beforeEach((to, from, next) => {
   // reset config to initial state
   configStore.resetLayoutConfig();
 
-  // verify auth token before each page change
-  authStore.verifyAuth();
-
-  // before page access check if page requires authentication
-  if (to.meta.middleware == "auth") {
-    if (authStore.isAuthenticated) {
-      next();
-    } else {
-      next({ name: "sign-in" });
-    }
-  } else {
-    next();
-  }
+  next();
 });
 
 export default router;

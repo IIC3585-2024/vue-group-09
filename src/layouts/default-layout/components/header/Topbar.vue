@@ -3,9 +3,7 @@
   <div class="d-flex align-items-stretch flex-shrink-0">
     <div class="topbar d-flex align-items-stretch flex-shrink-0">
       <!--begin::Search-->
-      <div class="d-flex align-items-stretch ms-1 ms-lg-3">
-        <KTSearch></KTSearch>
-      </div>
+
       <!--begin::Theme mode-->
       <div class="d-flex align-items-center ms-1 ms-lg-3">
         <!--begin::Menu toggle-->
@@ -58,16 +56,11 @@
 <script lang="ts">
 import { getAssetPath } from "@/core/helpers/assets";
 import { defineComponent } from "vue";
-import KTSearch from "@/layouts/default-layout/components/search/Search.vue";
-import KTUserMenu from "@/layouts/default-layout/components/menus/UserAccountMenu.vue";
 import KTThemeModeSwitcher from "@/layouts/default-layout/components/theme-mode/ThemeModeSwitcher.vue";
 
 export default defineComponent({
   name: "layout-topbar",
   components: {
-
-    KTUserMenu,
-    KTSearch,
     KTThemeModeSwitcher,
   },
   setup() {

@@ -33,8 +33,6 @@
   <!-- end:: Body -->
   <KTScrollTop />
   <KTMessengerDrawer />
-  <KTCreateApp />
-  <KTInviteFriendsModal />
 
   <KTToolbarButtons />
   <KTHelpDrawer />
@@ -53,8 +51,6 @@ import KTHeader from "@/layouts/default-layout/components/header/Header.vue";
 import KTFooter from "@/layouts/default-layout/components/footer/Footer.vue";
 import LayoutService from "@/core/services/LayoutService";
 import KTToolbar from "@/layouts/default-layout/components/toolbar/Toolbar.vue";
-import KTCreateApp from "@/components/modals/wizards/CreateAppModal.vue";
-import KTInviteFriendsModal from "@/components/modals/general/InviteFriendsModal.vue";
 
 import { reinitializeComponents } from "@/core/plugins/keenthemes";
 import {
@@ -75,8 +71,6 @@ export default defineComponent({
     KTHeader,
     KTFooter,
     KTToolbar,
-    KTCreateApp,
-    KTInviteFriendsModal,
   },
   setup() {
     const route = useRoute();

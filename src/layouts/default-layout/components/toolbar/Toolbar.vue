@@ -23,7 +23,6 @@
 import { getAssetPath } from "@/core/helpers/assets";
 import { defineComponent } from "vue";
 import PageTitle from "@/layouts/default-layout/components/toolbar/PageTitle.vue";
-import Dropdown1 from "@/components/dropdown/Dropdown1.vue";
 import { toolbarWidthFluid } from "@/layouts/default-layout/config/helper";
 
 export default defineComponent({

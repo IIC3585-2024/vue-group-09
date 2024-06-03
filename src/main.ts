@@ -11,21 +11,19 @@ import ElementPlus from "element-plus";
 import i18n from "@/core/plugins/i18n";
 
 //imports for app initialization
-import ApiService from "@/core/services/ApiService";
 import { initApexCharts } from "@/core/plugins/apexcharts";
 import { initInlineSvg } from "@/core/plugins/inline-svg";
 import { initVeeValidate } from "@/core/plugins/vee-validate";
 import { initKtIcon } from "@/core/plugins/keenthemes";
-
+import { v4 as uuidv4 } from 'uuid';
 import "@/core/plugins/prismjs";
-
+import 'leaflet/dist/leaflet.css';
 const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
 app.use(ElementPlus);
 
-ApiService.init(app);
 initApexCharts(app);
 initInlineSvg(app);
 initKtIcon(app);
@@ -36,5 +34,9 @@ app.use(i18n);
 app.directive("tooltip", (el) => {
   new Tooltip(el);
 });
-
+// Genera un identificador único para la sesión del usuario si no existe uno
+if (!localStorage.getItem('userSessionId')) {
+  const token=uuidv4();
+  localStorage.setItem('userSessionId', token);
+}
 app.mount("#app");
