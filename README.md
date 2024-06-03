@@ -24,7 +24,7 @@ To install and run this project, follow these steps:
 1. Clone the repository: `git clone https://github.com/IIC3585-2024/vue-group-09`
 2. Navigate to the project directory: `cd vue-group-09`
 3. Copy .env.example in .env
-4. Change the values of PREDICT API
+4. Change the values of [PredictHQ API ](https://www.predicthq.com)
 3. Install the dependencies: `npm install`
 4. Start the development server: `npm start`
 
