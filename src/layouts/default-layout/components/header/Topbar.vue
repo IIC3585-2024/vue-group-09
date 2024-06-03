@@ -57,11 +57,13 @@
 import { getAssetPath } from "@/core/helpers/assets";
 import { defineComponent } from "vue";
 import KTThemeModeSwitcher from "@/layouts/default-layout/components/theme-mode/ThemeModeSwitcher.vue";
+import KTUserMenu from "@/layouts/default-layout/components/menus/UserAccountMenu.vue";
 
 export default defineComponent({
   name: "layout-topbar",
   components: {
     KTThemeModeSwitcher,
+    KTUserMenu
   },
   setup() {
     return {

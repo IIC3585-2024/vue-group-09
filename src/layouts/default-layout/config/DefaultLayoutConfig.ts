@@ -9,8 +9,8 @@ const config: LayoutConfigTypes = {
     type: "default",
     primaryColor: "#009EF7",
     logo: {
-      dark: "media/logos/default-dark.svg",
-      light: "media/logos/default.svg",
+      dark: "media/logos/santiago-logo.png",
+      light: "media/logos/santiago-logo.png",
     },
   },
   illustrations: {

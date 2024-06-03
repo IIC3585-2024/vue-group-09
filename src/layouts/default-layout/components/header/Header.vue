@@ -39,7 +39,7 @@
           />
           <img
             alt="Logo"
-            :src="getAssetPath('media/logos/demo2-sticky.png')"
+            :src="getAssetPath('media/logos/santiago-logo.png')"
             class="logo-sticky h-25px"
           />
         </router-link>

@@ -1,47 +1,44 @@
-# demo2
+# Santiago Activities 
 
-This template should help get you started developing with Vue 3 in Vite.
+The application allows users to see events and save favorites activities in Santiago
 
-## Recommended IDE Setup
+## Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- **See Events**: Users can see events in Santiago
+- **Save Favorites**: Users can save favorites activities.
+- **Responsive Design**: The application is designed to be used on any device, with a responsive layout that adapts to
+  different screen sizes.
 
-## Type Support for `.vue` Imports in TS
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Technologies
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+This project is built using the following technologies:
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+- **Vue**: Used for the application logic and user interaction.
+- **Boostrap CSS**: A utility-first CSS framework used for styling the application.
 
-## Customize configuration
+## Installation
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+To install and run this project, follow these steps:
 
-## Project Setup
+1. Clone the repository: `git clone https://github.com/IIC3585-2024/vue-group-09`
+2. Navigate to the project directory: `cd vue-group-09`
+3. Copy .env.example in .env
+4. Change the values of PREDICT API
+3. Install the dependencies: `npm install`
+4. Start the development server: `npm start`
 
-```sh
-npm install
-```
+Open [http://localhost:5173/](http://localhost:5173/) to view the application in your browser.
 
-### Compile and Hot-Reload for Development
+## Contributing
 
-```sh
-npm run dev
-```
+Contributions to this project are welcome. If you find a bug or have a suggestion for improving the application, feel
+free to open an issue or submit a pull request.
 
-### Type-Check, Compile and Minify for Production
+## License
 
-```sh
-npm run build
-```
+This project is licensed under the terms of the MIT license.
 
-### Lint with [ESLint](https://eslint.org/)
+## Team Members
 
-```sh
-npm run lint
-```
-# vue-group-09
+Jose Cáceres, Ricardo Urvina, Sofía Villalobos.
